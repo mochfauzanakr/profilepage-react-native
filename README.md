@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# 🚀 My React Native Journey
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to my React Native learning journey!  
+This repository is where I explore, experiment, and document everything I learn about **React Native** — from the basics to more advanced concepts.
 
-## Get started
+---
 
-1. Install dependencies
+## 📘 About This Repo
+This repo serves as a personal learning space.  
+I’ll be:
+- Building small projects and UI components 🧩  
+- Trying out different libraries and tools ⚙️  
+- Writing notes or explanations to help me (and maybe others) understand concepts better ✍️  
 
-   ```bash
-   npm install
-   ```
+As I learn more, I might **rename** or **restructure** the repo to reflect my growth and understanding of React Native.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🧠 What I’m Currently Learning
+- React Native fundamentals (components, props, state)
+- Navigation and routing
+- Handling assets (images, icons, fonts)
+- Styling with `StyleSheet` and Tailwind (if used)
+- TypeScript in React Native
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🔮 Future Plans
+I plan to:
+- Build a few mini-projects (like a profile page, todo app, or shopping cart)
+- Experiment with animations
+- Learn about native modules and platform APIs
+- Explore deployment to Android and iOS
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 💡 Why I Made This
+I believe the best way to learn is by **building**.  
+This repo is my sandbox — a place where I can make mistakes, learn, and share my progress.
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🧭 Notes
+This repository is always evolving —  
+Expect name changes, folder reorganizations, and random experiments 😄
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+### ⚡ Tech Stack
+- React Native  
+- TypeScript  
+- (and whatever I discover next 👀)
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+> “Learning never stops. Every commit is a small step forward.”  
