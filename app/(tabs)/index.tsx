@@ -1,98 +1,111 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { Images, hobbies} from '../../assets/images';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 
-export default function HomeScreen() {
+
+export default function ProfileScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
+    <ScrollView style={styles.container}>
+      {/* profile section */}
+      <View style={styles.profileSection}>
+        <Text style={styles.profileText}>Profile</Text>
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={Images.profile}
+          style={styles.profileImage}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+        <View style={styles.profileGlobalText}>
+          <Text style={styles.name}>M. Fauzan Akrom</Text>
+          <Text style={styles.classText}>XI RPL 5</Text>
+          <Text style={styles.bio}>I like horse and coffee</Text>
+        </View>
+      </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      {/* Hobbies Section */}
+      <View style={styles.hobbiesSection}>
+        <Text style={styles.hobbiesTitle}>Hobbies</Text>
+        <View style={styles.hobbyList}>
+          {hobbies.map((hobby) => 
+              <View key={hobby.id} style={styles.hobbyItem}>
+                <Image
+                  source={hobby.image}
+                  style={styles.hobbyImage}
+                />
+                <Text style={styles.hobbyName}>{hobby.name}</Text>
+              </View>
+          )}
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  profileSection: {
+    backgroundColor: '#ffeaea',
     alignItems: 'center',
-    gap: 8,
+    paddingVertical: 30,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  profileImage: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginBottom: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  profileGlobalText: {
+    alignItems: 'center',
+  },
+  profileText: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#000',
+    marginBottom: 15,
+  }
+  ,
+  name: {
+    fontSize: 22,
+    fontWeight: '600',
+    color: '#000',
+  },
+  classText: {
+    fontSize: 16,
+    color: '#ff4b4b',
+    marginTop: 2,
+  },
+  bio: {
+    fontSize: 14,
+    color: '#222',
+    marginTop: 10,
+  },
+  hobbiesSection: {
+    padding: 20,
+  },
+  hobbiesTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    marginBottom: 15,
+    color: '#000',
+  },
+  hobbyList: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  hobbyItem: {
+    alignItems: 'center',
+  },
+  hobbyImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: '#ff5f5f',
+    marginBottom: 5,
+  },
+  hobbyName: {
+    fontSize: 13,
+    color: '#000',
   },
 });
